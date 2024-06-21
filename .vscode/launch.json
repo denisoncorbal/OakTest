@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-OakTestApplication<oaktest>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.dgc.oaktest.OakTestApplication",
+            "projectName": "oaktest",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
