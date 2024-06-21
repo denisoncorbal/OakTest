@@ -1,0 +1,26 @@
+services:
+  db:
+    image: postgresql:latest
+    ports: -"5432:5432"
+    networks:
+      - dbBackend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports: -"8080:8080"
+    networks:
+      - dbBackend
+      - backendFrontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: production
+    ports: -"5173:5173"
+    networks:
+      - backendFrontend
+networks:
+  dbBackend:
+  backendFrontend:
